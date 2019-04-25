@@ -17,4 +17,8 @@ public class VZRequest {
         self.result = result
         self.requestData = requestData
     }
+    
+    deinit {
+        print("deinit \(requestData.url) request")
+    }
 }

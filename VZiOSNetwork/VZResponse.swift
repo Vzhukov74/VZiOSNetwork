@@ -21,6 +21,7 @@ public struct VZResponse {
         do {
             return try decoder.decode(T.self, from: data)
         } catch {
+            print(error.localizedDescription)
             return nil
         }
     }

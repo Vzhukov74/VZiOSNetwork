@@ -33,17 +33,20 @@ class VZURLHelper {
         return body
     }
     
-    class func createRequestFor(upload media: [VZMedia], to urlStr: String) -> URLRequest? {
+    class func configure(for request: inout URLRequest, with media: [VZMedia]) {
+        if media.count == 1 {
+            if let media = media.first, media.isJSON {
+                request.httpBody = media.data
+                request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+                request.setValue("application/json", forHTTPHeaderField: "Accept")
+                return
+            }
+        }
+        
         let boundary = VZURLHelper.boundary()
         
-        guard let url = URL(string: urlStr) else { return nil }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         request.httpBody = VZURLHelper.createHttpDataBody(with: nil, media: media, boundary: boundary)
-        
-        return request
     }
     
     class func postString(for params: HTTPParemeters) -> String {

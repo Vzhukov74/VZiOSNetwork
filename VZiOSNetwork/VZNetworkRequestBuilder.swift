@@ -6,10 +6,6 @@ import Foundation
 
 class VZNetworkRequestBuilder {
     class func build(for urlData: VZURLData) -> URLRequest? {
-        if let media = urlData.media {
-            return VZURLHelper.createRequestFor(upload: media, to: urlData.url)
-        }
-        
         var urlStr = urlData.url
         if urlData.method == "GET", urlData.parameters != nil {
             let parametersStr = VZURLHelper.getString(for: urlData.parameters!)
@@ -20,7 +16,7 @@ class VZNetworkRequestBuilder {
             return nil
         }
         
-        var request = URLRequest(url: url)
+        var request: URLRequest = URLRequest(url: url)
         request.httpMethod = urlData.method
         VZNetworkRequestBuilder.addHeaders(for: &request, headers: urlData.headers)
         
@@ -31,6 +27,10 @@ class VZNetworkRequestBuilder {
         
         if let etagStr = urlData.eTag, !etagStr.isEmpty {
             request.addValue(etagStr, forHTTPHeaderField: "If-None-Match")
+        }
+        
+        if let media = urlData.media {
+            VZURLHelper.configure(for: &request, with: media)
         }
         
         return request
