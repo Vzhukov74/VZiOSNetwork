@@ -46,6 +46,6 @@ public class VZRequest {
     }
         
     deinit {
-        print("deinit \(requestData.url) request")
+        print("🛰 deinit request: \(requestData.url)")
     }
 }
