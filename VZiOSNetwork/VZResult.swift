@@ -1,8 +1,9 @@
-//
-//  VZResponse.swift
-//  VZiOSNetwork
-
 import Foundation
+
+public enum VZResult {
+    case success(VZResponse)
+    case fail(String)
+}
 
 public struct VZResponse {
     public let code: Int

@@ -10,8 +10,8 @@
 		0436019321C27A4D002ECF81 /* VZiOSNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0436018921C27A4D002ECF81 /* VZiOSNetwork.framework */; };
 		0436019821C27A4D002ECF81 /* VZiOSNetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436019721C27A4D002ECF81 /* VZiOSNetworkTests.swift */; };
 		0436019A21C27A4D002ECF81 /* VZiOSNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 0436018C21C27A4D002ECF81 /* VZiOSNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		043601AA21C27A59002ECF81 /* VZMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A321C27A58002ECF81 /* VZMedia.swift */; };
-		043601AB21C27A59002ECF81 /* VZMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A321C27A58002ECF81 /* VZMedia.swift */; };
+		043601AA21C27A59002ECF81 /* VZData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A321C27A58002ECF81 /* VZData.swift */; };
+		043601AB21C27A59002ECF81 /* VZData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A321C27A58002ECF81 /* VZData.swift */; };
 		043601AC21C27A59002ECF81 /* VZExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A421C27A58002ECF81 /* VZExtensions.swift */; };
 		043601AD21C27A59002ECF81 /* VZExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A421C27A58002ECF81 /* VZExtensions.swift */; };
 		043601AE21C27A59002ECF81 /* VZNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A521C27A59002ECF81 /* VZNetwork.swift */; };
@@ -20,12 +20,10 @@
 		043601B121C27A59002ECF81 /* VZURLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A621C27A59002ECF81 /* VZURLHelper.swift */; };
 		043601B221C27A59002ECF81 /* VZRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A721C27A59002ECF81 /* VZRequest.swift */; };
 		043601B321C27A59002ECF81 /* VZRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A721C27A59002ECF81 /* VZRequest.swift */; };
-		043601B421C27A59002ECF81 /* VZRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A821C27A59002ECF81 /* VZRequestResult.swift */; };
-		043601B521C27A59002ECF81 /* VZRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A821C27A59002ECF81 /* VZRequestResult.swift */; };
+		043601B421C27A59002ECF81 /* VZResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A821C27A59002ECF81 /* VZResult.swift */; };
+		043601B521C27A59002ECF81 /* VZResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A821C27A59002ECF81 /* VZResult.swift */; };
 		043601B621C27A59002ECF81 /* VZURLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A921C27A59002ECF81 /* VZURLData.swift */; };
 		043601B721C27A59002ECF81 /* VZURLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043601A921C27A59002ECF81 /* VZURLData.swift */; };
-		0457E87521C7D62600C8353E /* VZResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457E87421C7D62600C8353E /* VZResponse.swift */; };
-		0457E87721C7E1CE00C8353E /* VZNetworkRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457E87621C7E1CE00C8353E /* VZNetworkRequestBuilder.swift */; };
 		0457E87921C7E22200C8353E /* VZNetworkTaskDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0457E87821C7E22200C8353E /* VZNetworkTaskDebug.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,15 +44,13 @@
 		0436019221C27A4D002ECF81 /* VZiOSNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VZiOSNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0436019721C27A4D002ECF81 /* VZiOSNetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VZiOSNetworkTests.swift; sourceTree = "<group>"; };
 		0436019921C27A4D002ECF81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		043601A321C27A58002ECF81 /* VZMedia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZMedia.swift; sourceTree = "<group>"; };
+		043601A321C27A58002ECF81 /* VZData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZData.swift; sourceTree = "<group>"; };
 		043601A421C27A58002ECF81 /* VZExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZExtensions.swift; sourceTree = "<group>"; };
 		043601A521C27A59002ECF81 /* VZNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZNetwork.swift; sourceTree = "<group>"; };
 		043601A621C27A59002ECF81 /* VZURLHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZURLHelper.swift; sourceTree = "<group>"; };
 		043601A721C27A59002ECF81 /* VZRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZRequest.swift; sourceTree = "<group>"; };
-		043601A821C27A59002ECF81 /* VZRequestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZRequestResult.swift; sourceTree = "<group>"; };
+		043601A821C27A59002ECF81 /* VZResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZResult.swift; sourceTree = "<group>"; };
 		043601A921C27A59002ECF81 /* VZURLData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VZURLData.swift; sourceTree = "<group>"; };
-		0457E87421C7D62600C8353E /* VZResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VZResponse.swift; sourceTree = "<group>"; };
-		0457E87621C7E1CE00C8353E /* VZNetworkRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VZNetworkRequestBuilder.swift; sourceTree = "<group>"; };
 		0457E87821C7E22200C8353E /* VZNetworkTaskDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VZNetworkTaskDebug.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,14 +96,12 @@
 			children = (
 				043601A521C27A59002ECF81 /* VZNetwork.swift */,
 				043601A721C27A59002ECF81 /* VZRequest.swift */,
-				043601A321C27A58002ECF81 /* VZMedia.swift */,
-				043601A821C27A59002ECF81 /* VZRequestResult.swift */,
+				043601A321C27A58002ECF81 /* VZData.swift */,
+				043601A821C27A59002ECF81 /* VZResult.swift */,
 				043601A921C27A59002ECF81 /* VZURLData.swift */,
 				043601A621C27A59002ECF81 /* VZURLHelper.swift */,
 				0436018C21C27A4D002ECF81 /* VZiOSNetwork.h */,
 				0436018D21C27A4D002ECF81 /* Info.plist */,
-				0457E87421C7D62600C8353E /* VZResponse.swift */,
-				0457E87621C7E1CE00C8353E /* VZNetworkRequestBuilder.swift */,
 				0457E87821C7E22200C8353E /* VZNetworkTaskDebug.swift */,
 				043601A421C27A58002ECF81 /* VZExtensions.swift */,
 			);
@@ -234,15 +228,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				043601B621C27A59002ECF81 /* VZURLData.swift in Sources */,
-				043601B421C27A59002ECF81 /* VZRequestResult.swift in Sources */,
+				043601B421C27A59002ECF81 /* VZResult.swift in Sources */,
 				043601AE21C27A59002ECF81 /* VZNetwork.swift in Sources */,
 				0457E87921C7E22200C8353E /* VZNetworkTaskDebug.swift in Sources */,
 				043601B221C27A59002ECF81 /* VZRequest.swift in Sources */,
-				043601AA21C27A59002ECF81 /* VZMedia.swift in Sources */,
+				043601AA21C27A59002ECF81 /* VZData.swift in Sources */,
 				043601AC21C27A59002ECF81 /* VZExtensions.swift in Sources */,
 				043601B021C27A59002ECF81 /* VZURLHelper.swift in Sources */,
-				0457E87721C7E1CE00C8353E /* VZNetworkRequestBuilder.swift in Sources */,
-				0457E87521C7D62600C8353E /* VZResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				043601B521C27A59002ECF81 /* VZRequestResult.swift in Sources */,
-				043601AB21C27A59002ECF81 /* VZMedia.swift in Sources */,
+				043601B521C27A59002ECF81 /* VZResult.swift in Sources */,
+				043601AB21C27A59002ECF81 /* VZData.swift in Sources */,
 				043601B321C27A59002ECF81 /* VZRequest.swift in Sources */,
 				043601AD21C27A59002ECF81 /* VZExtensions.swift in Sources */,
 				043601B121C27A59002ECF81 /* VZURLHelper.swift in Sources */,

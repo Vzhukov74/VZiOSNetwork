@@ -25,3 +25,13 @@ extension CharacterSet {
         return allowed
     }()
 }
+
+extension URLRequest {
+    mutating func add(headers: HTTPHeaders?) {
+        guard let headers = headers else { return }
+        
+        for (key, value) in headers {
+            self.addValue(value, forHTTPHeaderField: key)
+        }
+    }
+}

@@ -1,21 +1,21 @@
 import Foundation
 import UIKit
 
-public class VZNetwork {
-    public static func perform(with request: VZRequest, for session: URLSession = URLSession.shared) {
+public extension URLSession {
+    func perform(with request: VZRequest) {
         DispatchQueue.main.async {
             request.uiProgressDelegate?.updateUIProgress(false)
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
         
-        guard let urlRequest = VZNetworkRequestBuilder.build(for: request.requestData) else {
+        guard let urlRequest = request.buildURLRequest() else {
             DispatchQueue.main.async {
                 request.result?(.fail("error with build request"))
             }
             return
         }
         
-        let task = session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+        let task = self.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             VZNetworkTaskDebug.debugPrint(data)
             
             DispatchQueue.main.async {

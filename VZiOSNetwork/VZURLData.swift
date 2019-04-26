@@ -8,7 +8,7 @@ public struct VZURLData {
     let method: String
     var headers: HTTPHeaders?
     var parameters: HTTPParemeters?
-    var media: [VZMedia]?
+    var media: [VZData]?
     var eTag: String? = nil
     
     public init(url: String, method: String = "GET", headers: HTTPHeaders? = nil, parameters: HTTPParemeters? = nil) {
@@ -26,11 +26,11 @@ public struct VZURLData {
         self.headers = headers
     }
     
-    public mutating func add(media: VZMedia) {
+    public mutating func add(media: VZData) {
         self.media = [media]
     }
     
-    public mutating func add(media: [VZMedia]) {
+    public mutating func add(media: [VZData]) {
         self.media = media
     }
     

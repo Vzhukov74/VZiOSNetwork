@@ -5,7 +5,7 @@ class VZURLHelper {
         return "Boundary-\(NSUUID().uuidString)"
     }
     
-    class func createHttpDataBody(with parameters: HTTPHeaders?, media: [VZMedia]?, boundary: String) -> Data {
+    class func createHttpDataBody(with parameters: HTTPHeaders?, media: [VZData]?, boundary: String) -> Data {
         let lineBreak = "\r\n"
         var body = Data()
         
@@ -33,9 +33,11 @@ class VZURLHelper {
         return body
     }
     
-    class func configure(for request: inout URLRequest, with media: [VZMedia]) {
+    class func configure(for request: inout URLRequest, with media: [VZData]) {
+        media.forEach { $0.setupHeaderFields(request: &request) }
+        
         if media.count == 1 {
-            if let media = media.first, media.isJSON {
+            if let media = media.first {
                 request.httpBody = media.data
                 request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
                 request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -49,7 +51,8 @@ class VZURLHelper {
         request.httpBody = VZURLHelper.createHttpDataBody(with: nil, media: media, boundary: boundary)
     }
     
-    class func postString(for params: HTTPParemeters) -> String {
+    class func postData(for params: HTTPParemeters?) -> Data? {
+        guard let params = params else { return nil }
         var data = [String]()
         for(key, value) in params {
             if value is [String: Any] {
@@ -71,10 +74,12 @@ class VZURLHelper {
             }
         }
         let str = data.map { String($0) }.joined(separator: "&")
-        return str
+
+        return str.data(using: .utf8, allowLossyConversion: true)
     }
     
-    class func getString(for params: HTTPParemeters) -> String {
+    class func getString(for params: HTTPParemeters?) -> String {
+        guard let params = params else { return "" }
         let separator = "&"
         var str = ""
         for(key, value) in params {
@@ -90,6 +95,6 @@ class VZURLHelper {
         }
         _ = str.removeLast()
         
-        return str
+        return "?" + str
     }
 }
