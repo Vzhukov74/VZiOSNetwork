@@ -25,11 +25,20 @@ public struct VZData {
         self.data = data
     }
     
-    public init?(with json: Data, for key: String, filename: String = "") {
+    public init(with json: Data, for key: String, filename: String = "") {
         self.key = key
         self.type = .json
         self.filename = filename
         self.data = json
+    }
+    
+    public init?(with json: HTTPParemeters, for key: String, filename: String = "") {
+        guard let data = try? JSONSerialization.data(withJSONObject: json) else { return nil }
+        
+        self.key = key
+        self.type = .json
+        self.filename = filename
+        self.data = data
     }
     
     func setupHeaderFields(request: inout URLRequest) {
