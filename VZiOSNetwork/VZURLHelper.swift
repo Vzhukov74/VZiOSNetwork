@@ -37,7 +37,7 @@ class VZURLHelper {
         media.forEach { $0.setupHeaderFields(request: &request) }
         
         if media.count == 1 {
-            if let media = media.first {
+            if let media = media.first, media.type == .json {
                 request.httpBody = media.data
                 request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
                 request.setValue("application/json", forHTTPHeaderField: "Accept")

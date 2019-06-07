@@ -10,6 +10,8 @@ public struct VZResponse {
     public var eTag: String?
     public var data: Data?
     
+    public var isSuccess: Bool { return code == 200 }
+    
     init(code: Int, eTag: String? = nil, data: Data? = nil) {
         self.code = code
         self.eTag = eTag
